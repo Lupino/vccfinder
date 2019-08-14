@@ -14,7 +14,6 @@ import (
 	"unsafe"
 
 	"github.com/libgit2/git2go"
-	"github.com/sbinet/go-clang"
 )
 
 var DisableFunctionAnalysis = false
@@ -128,7 +127,7 @@ func (f *Function) ContainsLine(line int) bool {
 	return int(f.StartLine) <= line && line <= int(f.EndLine)
 }
 
-func functionsForFilename(fname string, unsaved clang.UnsavedFiles) (functions *Functions, err error) {
+func functionsForFilename(fname string, unsaved map[string]string) (functions *Functions, err error) {
 	cfname := C.CString(fname)
 	defer C.free(unsafe.Pointer(cfname))
 
