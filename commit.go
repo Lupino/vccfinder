@@ -14,8 +14,8 @@ import (
 
 	"time"
 
-	"tools.net.cs.uni-bonn.de/social-aspects-of-vulnerabilities/github-data/ds"
-	"tools.net.cs.uni-bonn.de/social-aspects-of-vulnerabilities/github-data/tools"
+	"github.com/hperl/vccfinder/ds"
+	"github.com/hperl/vccfinder/tools"
 )
 
 var (
