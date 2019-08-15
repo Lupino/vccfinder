@@ -25,7 +25,7 @@ func newPool() *redis.Pool {
 		MaxIdle:     3,
 		IdleTimeout: 240 * time.Second,
 		Dial: func() (redis.Conn, error) {
-			return redis.Dial("tcp", "131.220.109.52:6386")
+			return redis.Dial("tcp", os.Getenv("REDIS"))
 		},
 		TestOnBorrow: func(c redis.Conn, t time.Time) error {
 			_, err := c.Do("PING")
