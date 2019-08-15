@@ -433,8 +433,7 @@ func AddRepository(reponame string) error {
 	if err != nil {
 		return fmt.Errorf("connecting to github: %v", err)
 	}
-	var ctx context.Context
-	res, err := ghClient.Do(ctx, req, r)
+	res, err := ghClient.Do(context.Background(), req, r)
 	if err != nil {
 		return fmt.Errorf("retrieving repo from github: %v %v %v", req, res, err)
 	}
