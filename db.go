@@ -38,7 +38,7 @@ func InitDb() (err error) {
 func newDBConnection() (conn *sql.DB, err error) {
 	conn, err = sql.Open(
 		"postgres",
-		"postgres://"+os.Getenv("POSTGRES_CONNECTION")+"/"+dbname,
+		"postgres://"+os.Getenv("POSTGRES_CONNECTION")+"/"+dbname+"?sslmode=disable",
 	)
 	if err != nil {
 		return nil, err
