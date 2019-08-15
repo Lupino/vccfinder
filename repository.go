@@ -18,9 +18,9 @@ import (
 
 	"time"
 
+	"context"
 	"github.com/google/go-github/github"
 	"github.com/libgit2/git2go"
-	"context"
 )
 
 type Repository struct {
