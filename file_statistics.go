@@ -40,8 +40,8 @@ func init() {
 
 func FileChanges(repo *git.Repository, commit *git.Commit, filepath string) (cs *ChangeStatistic, err error) {
 	var buf bytes.Buffer
-	PastAuthors := new(set.Strings)
-	FutureAuthors := new(set.Strings)
+	PastAuthors := set.NewStrings()
+	FutureAuthors := set.NewStrings()
 	future := true
 	sha := commit.Id().String()
 	cs = new(ChangeStatistic)
